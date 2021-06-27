@@ -1,8 +1,9 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
+
 public class Reading {
 
-public static void reading(){
+    public static void reading() {
         String file = "src\\TestCSV.csv";
         String line = "";
 
@@ -19,5 +20,5 @@ public static void reading(){
         } catch (Exception e) {
             e.printStackTrace();
         }
-}
+    }
 }

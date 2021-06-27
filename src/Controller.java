@@ -1,14 +1,15 @@
 import java.util.Scanner;
 
 public class Controller {
-    public static void startProgram(){
+    public static void startProgram() {
 
         System.out.println("Program is run");
 
         mainChoice();
 
     }
-    public static void mainChoice(){
+
+    public static void mainChoice() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Doctor 1");
@@ -17,7 +18,7 @@ public class Controller {
 
         int input = scanner.nextInt();
 
-        switch (input){
+        switch (input) {
             case 1:
                 System.out.println("You are doctor");
                 doctorChoice();
@@ -33,12 +34,12 @@ public class Controller {
         }
     }
 
-    public static void doctorChoice(){
+    public static void doctorChoice() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Doctor functional 1, 2, 3 or 4 to turn Back");
         int input = scanner.nextInt();
 
-        switch (input){
+        switch (input) {
             case 1:
                 System.out.println("Doctor functional 1");
                 break;
@@ -54,12 +55,12 @@ public class Controller {
         }
     }
 
-    protected static void patientChoice(){
+    protected static void patientChoice() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Patient functional 1, 2, 3 or 4 to turn Back");
         int input = scanner.nextInt();
 
-        switch (input){
+        switch (input) {
             case 1:
                 System.out.println("Patient functional 1");
                 break;

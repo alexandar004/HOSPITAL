@@ -1,5 +1,3 @@
-package Enums;
-
 public enum Inspection {
     INITIAL,
     SECONDARY,

@@ -1,5 +1,3 @@
-import Enums.Inspection;
-
 public class Appointments {
     int appointmentsId;
     int patientId;

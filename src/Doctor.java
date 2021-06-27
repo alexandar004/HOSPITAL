@@ -1,9 +1,9 @@
 public class Doctor extends Human{
 
-    Speciality speciality;
-
-    public Doctor(String firstName, String lastName, int id, Speciality speciality) {
-        super(firstName, lastName, id);
-        this.speciality = speciality;
+    public Doctor(int id, String firstName, String lastName, int age) {
+        super(id, firstName, lastName, age);
+    }
+    public Doctor(int id, String firstName, String lastName) {
+        super(id, firstName, lastName);
     }
 }

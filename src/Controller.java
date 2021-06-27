@@ -18,10 +18,11 @@ public class Controller {
 
         int input = scanner.nextInt();
 
+
         switch (input) {
             case 1:
                 System.out.println("You are doctor");
-                doctorChoice();
+                UserMenu.getLogInParameters(scanner);
                 break;
             case 2:
                 System.out.println("You are patient");
@@ -33,6 +34,8 @@ public class Controller {
                 break;
         }
     }
+
+
 
     public static void doctorChoice() {
         Scanner scanner = new Scanner(System.in);

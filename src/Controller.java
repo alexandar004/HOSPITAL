@@ -1,14 +1,12 @@
 import java.util.Scanner;
 
 public class Controller {
-    public static void startProgram(){
-
+    public static void startProgram() {
         System.out.println("Program is run");
-
         mainChoice();
-
     }
-    public static void mainChoice(){
+
+    public static void  mainChoice() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Doctor 1");
@@ -17,61 +15,45 @@ public class Controller {
 
         int input = scanner.nextInt();
 
-        switch (input){
-            case 1:
+        switch (input) {
+            case 1 -> {
                 System.out.println("You are doctor");
                 doctorChoice();
-                break;
-            case 2:
+            }
+            case 2 -> {
                 System.out.println("You are patient");
                 patientChoice();
-                break;
-            case 3:
+            }
+            case 3 -> {
                 System.out.println("Exit");
                 System.exit(0);
-                break;
+            }
         }
     }
 
-    public static void doctorChoice(){
+    public static void doctorChoice() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Doctor functional 1, 2, 3 or 4 to turn Back");
         int input = scanner.nextInt();
 
-        switch (input){
-            case 1:
-                System.out.println("Doctor functional 1");
-                break;
-            case 2:
-                System.out.println("Doctor functional 2");
-                break;
-            case 3:
-                System.out.println("Doctor functional 3");
-                break;
-            case 4:
-                mainChoice();
-                break;
+        switch (input) {
+            case 1 -> System.out.println("Doctor functional 1");
+            case 2 -> System.out.println("Doctor functional 2");
+            case 3 -> System.out.println("Doctor functional 3");
+            case 4 -> mainChoice();
         }
     }
 
-    protected static void patientChoice(){
+    protected static void patientChoice() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Patient functional 1, 2, 3 or 4 to turn Back");
         int input = scanner.nextInt();
 
-        switch (input){
-            case 1:
-                System.out.println("Patient functional 1");
-                break;
-            case 2:
-                System.out.println("Patient functional 2");
-                break;
-            case 3:
-                System.out.println("Patient functional 3");
-                break;
-            case 4:
-                mainChoice();
-                break;
+        switch (input) {
+            case 1 -> System.out.println("Patient functional 1");
+            case 2 -> System.out.println("Patient functional 2");
+            case 3 -> System.out.println("Patient functional 3");
+            case 4 -> mainChoice();
         }
     }
 }

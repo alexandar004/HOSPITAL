@@ -21,7 +21,7 @@ public class UserMenu {
         switch (input) {
             case 1 -> {
                 System.out.println("You are doctor");
-                doctorLogIn(getLogInParameters(scanner));
+                getLogInParameters(scanner);
             }
             case 2 -> {
                 System.out.println("You are patient");
@@ -72,9 +72,9 @@ public class UserMenu {
         }
     }
 
-    public static void doctorLogIn(Doctor doctor) {
-        if (DataConvertor.getDoctors().contains(doctor)) {
-            
+    public void doctorLogIn(Doctor doctor) {
+        if (this.dataConvertor.getDoctors().contains(doctor)) {
+
         } else {
             doctorLogIn(getLogInParameters());
         }

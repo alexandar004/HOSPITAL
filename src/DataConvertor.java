@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class DataConvertor {
-    public static final String SPLIT_REGEX = ",";
+    public final String SPLIT_REGEX = ",";
 
     FileManager fileManager = new FileManager();
 
@@ -11,7 +11,7 @@ public class DataConvertor {
     List<Doctor> doctors = convertToDoctor(fileManager.getDoctors());
     List<Appointments> appointments = convertToAppointments(fileManager.getAppointment());
 
-    public static List<Doctor> getDoctors() {
+    public List<Doctor> getDoctors() {
         return doctors;
     }
 

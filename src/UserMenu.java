@@ -1,11 +1,14 @@
 import java.util.Scanner;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class UserMenu {
     public static void startProgram() {
-
         System.out.println("Program is run");
         mainChoice();
-
     }
 
     public static void mainChoice() {
@@ -37,6 +40,7 @@ public class UserMenu {
         }
     }
 
+
     public static void doctorChoice() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Doctor functional 1, 2, 3 or 4 to turn Back");
@@ -54,13 +58,16 @@ public class UserMenu {
         }
     }
 
-        protected static void patientChoice() {
+    protected static void patientChoice() {
+        var currentLoggedInPatient = Patient.loginAsPatient();
+
+        if (currentLoggedInPatient != null) {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Patient functional 1, 2, 3 or 4 to turn Back");
+            System.out.println("1 - view all appointments, 2 - update an appointment, 3 - delete an appointment or 4 to turn Back");
             int input = scanner.nextInt();
 
             switch (input) {
-                case 1 -> System.out.println("Patient functional 1");
+                case 1 -> currentLoggedInPatient.viewAllAppointments();
                 case 2 -> System.out.println("Patient functional 2");
                 case 3 -> System.out.println("Patient functional 3");
                 case 4 -> mainChoice();
@@ -70,4 +77,9 @@ public class UserMenu {
                 }
             }
         }
+
+
     }
+
+
+}

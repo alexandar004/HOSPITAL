@@ -40,7 +40,6 @@ public class UserMenu {
         }
     }
 
-
     public static void doctorChoice() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Doctor functional 1, 2, 3 or 4 to turn Back");
@@ -77,9 +76,5 @@ public class UserMenu {
                 }
             }
         }
-
-
     }
-
-
 }

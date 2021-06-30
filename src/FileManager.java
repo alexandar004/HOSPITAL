@@ -4,8 +4,8 @@ public class FileManager {
     ReadFile reading = new ReadFile();
 
     String doctorsLink = "M:\\HospitalProject\\src\\doctors.csv";
-    String patientsLink = "M:\\HospitalProject\\src\\patients.csv";
-    String appointmentsLink = "M:\\HospitalProject\\src\\appointments.csv";
+    String patientsLink = "D:\\hospital_project\\HOSPITAL\\src\\patients.csv";
+    String appointmentsLink = "D:\\hospital_project\\HOSPITAL\\src\\appointments.csv";
 
     List<String> doctors = reading.read(doctorsLink);
     List<String> patients = reading.read(patientsLink);

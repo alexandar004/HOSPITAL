@@ -1,15 +1,21 @@
 import java.util.Scanner;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class UserMenu {
 
     DataConvertor dataConvertor = new DataConvertor();
+    FunctionalityDoctor functionalityDoctor = new FunctionalityDoctor();
 
-    public static void startProgram() {
+    public void startProgram() {
         System.out.println("Program is run");
         mainChoice();
     }
 
-    public static void mainChoice() {
+    public void mainChoice() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Doctor 1");
@@ -21,7 +27,8 @@ public class UserMenu {
         switch (input) {
             case 1 -> {
                 System.out.println("You are doctor");
-                getLogInParameters(scanner);
+                functionalityDoctor.doctorLogIn(
+                        functionalityDoctor.getLogInParameters(scanner));
             }
             case 2 -> {
                 System.out.println("You are patient");
@@ -38,7 +45,8 @@ public class UserMenu {
         }
     }
 
-    public static void doctorChoice() {
+
+    public void doctorChoice() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Doctor functional 1, 2, 3 or 4 to turn Back");
         int input = scanner.nextInt();
@@ -55,7 +63,8 @@ public class UserMenu {
         }
     }
 
-    protected static void patientChoice() {
+    protected void patientChoice() {
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Patient functional 1, 2, 3 or 4 to turn Back");
         int input = scanner.nextInt();
@@ -72,23 +81,24 @@ public class UserMenu {
         }
     }
 
-    public void doctorLogIn(Doctor doctor) {
-        if (this.dataConvertor.getDoctors().contains(doctor)) {
 
-        } else {
-            doctorLogIn(getLogInParameters());
+    protected static void patientChoice() {
+        var currentLoggedInPatient = Patient.loginAsPatient();
+        if (currentLoggedInPatient != null) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("1 - view all appointments, 2 - update an appointment, 3 - delete an appointment or 4 to turn Back");
+            int input = scanner.nextInt();
+            switch (input) {
+                case 1 -> currentLoggedInPatient.viewAllAppointments();
+                case 2 -> System.out.println("Patient functional 2");
+                case 3 -> System.out.println("Patient functional 3");
+                case 4 -> mainChoice();
+                default -> {
+                    System.out.println("Enter 1, 2, 3 or 4");
+                    patientChoice();
+                }
+            }
         }
     }
 
-    public static Doctor getLogInParameters(Scanner scanner) {
-        System.out.println("Please enter your ID, first name and last name");
-        System.out.print("ID: ");
-        int id = scanner.nextInt();
-        System.out.print("First name: ");
-        String firstName = scanner.next();
-        System.out.print("Last name: ");
-        String lastName = scanner.next();
-
-        return new Doctor(id, firstName, lastName);
-    }
 }

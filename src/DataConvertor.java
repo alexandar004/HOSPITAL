@@ -7,21 +7,22 @@ public class DataConvertor {
 
     FileManager fileManager = new FileManager();
 
-    List<Patient> patients = convertToPatient(fileManager.getPatients());
+    //List<Patient> patients = convertToPatient(fileManager.getPatients());
     List<Doctor> doctors = convertToDoctor(fileManager.getDoctors());
-    List<Appointments> appointments = convertToAppointments(fileManager.getAppointment());
+    List<Appointment> appointments = convertToAppointments(fileManager.getAppointment());
+
 
     public List<Doctor> getDoctors() {
         return doctors;
     }
 
-    public List<Patient> getPatients() {
-        return patients;
-    }
-
-    public List<Appointments> getAppointments() {
-        return appointments;
-    }
+//    public List<Patient> getPatients() {
+//        return patients;
+//    }
+//
+//    public List<Appointment> getAppointments() {
+//        return appointments;
+//    }
 
     public List<Doctor> convertToDoctor(List<String> data) {
         List<Doctor> doctor = new ArrayList<>();
@@ -35,11 +36,11 @@ public class DataConvertor {
         return doctor;
     }
 
-    public List<Patient> convertToPatient(List<String> data) {
-        return data.stream().map(Patient::convertToPatient).collect(Collectors.toList());
-    }
+//    public List<Patient> convertToPatient(List<String> data) {
+//        return data.stream().map(Patient::convertToPatient).collect(Collectors.toList());
+//    }
 
-    public List<Appointments> convertToAppointments(List<String> data) {
+    public List<Appointment> convertToAppointments(List<String> data) {
 
         return null;
     }

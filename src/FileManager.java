@@ -3,7 +3,7 @@ import java.util.List;
 public class FileManager {
     ReadFile reading = new ReadFile();
 
-    String doctorsLink = "M:\\HospitalProject\\src\\doctors.csv";
+    String doctorsLink = "D:\\hospital_project\\HOSPITAL\\src.csv";
     String patientsLink = "D:\\hospital_project\\HOSPITAL\\src\\patients.csv";
     String appointmentsLink = "D:\\hospital_project\\HOSPITAL\\src\\appointments.csv";
 
@@ -14,9 +14,11 @@ public class FileManager {
     public List<String> getDoctors() {
         return doctors;
     }
+
     public List<String> getPatients() {
         return patients;
     }
+
     public List<String> getAppointment() {
         return appointment;
     }

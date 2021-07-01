@@ -1,6 +1,8 @@
-import java.util.*;
+import org.w3c.dom.html.HTMLImageElement;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Patient extends Human {
     Scanner input = new Scanner(System.in);
@@ -14,10 +16,23 @@ public class Patient extends Human {
         var allAppointments = manager.getAppointment();
         var appointmentsToShowList = new ArrayList<Appointment>();
         var patientId = super.getId();
+        List<Appointment> appointmentList = new ArrayList<Appointment>();
 
         for (int i = 0; i < allAppointments.size(); i++) {
-            // filter patient id
+            var appointmentRaw = allAppointments.get(i).split(",");
+
+            var appointments = new Appointment(Integer.parseInt(appointmentRaw[0]), Integer.parseInt(appointmentRaw[1]), appointmentRaw[2], appointmentRaw[3], Integer.parseInt(appointmentRaw[4]), Integer.parseInt(appointmentRaw[5]));
+            appointmentList.add(appointments);
         }
+        // filter patient
+
+        var appointments = appointmentList.stream()
+                .filter(a -> a.getPatientId() == patientId);
+        System.out.println(appointments.toArray().length);
+        for (int i = 0; i <= appointments.count(); i++) {
+            System.out.println(appointments);
+        }
+        // System.out.println(appointments.);
     }
 
     public static Patient loginAsPatient() {

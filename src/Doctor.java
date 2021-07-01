@@ -4,4 +4,8 @@ public class Doctor extends Human {
     public Doctor(int id, String firstName, String lastName, Speciality speciality) {
         super(id, firstName, lastName);
     }
+
+    public Doctor(int id, String firstName, String lastName) {
+        super(id, firstName, lastName);
+    }
 }

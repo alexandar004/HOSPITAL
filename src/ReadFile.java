@@ -18,6 +18,8 @@ public class ReadFile {
             System.out.println("Exception while reading the file was thrown");
             System.out.println(e.getMessage());
         }
+
         return arrayList;
     }
+
 }

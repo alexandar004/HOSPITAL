@@ -1,38 +1,23 @@
-import org.w3c.dom.html.HTMLImageElement;
-
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class Patient extends Human {
-    Scanner input = new Scanner(System.in);
+    int age;
 
     public Patient(int id, String firstName, String lastName, int age) {
-        super(id, firstName, lastName, age);
+        super(id, firstName, lastName);
     }
 
-    public void viewAllAppointments() {
-        var manager = new FileManager();
-        var allAppointments = manager.getAppointment();
-        var appointmentsToShowList = new ArrayList<Appointment>();
-        var patientId = super.getId();
-        List<Appointment> appointmentList = new ArrayList<Appointment>();
+    public static void parseStringsToPatient(List<String> patientsRaw) {
+        List<Patient> patients = new ArrayList<>();
+    }
 
-        for (int i = 0; i < allAppointments.size(); i++) {
-            var appointmentRaw = allAppointments.get(i).split(",");
-
-            var appointments = new Appointment(Integer.parseInt(appointmentRaw[0]), Integer.parseInt(appointmentRaw[1]), appointmentRaw[2], appointmentRaw[3], Integer.parseInt(appointmentRaw[4]), Integer.parseInt(appointmentRaw[5]));
-            appointmentList.add(appointments);
-        }
-        // filter patient
-
-        var appointments = appointmentList.stream()
-                .filter(a -> a.getPatientId() == patientId);
-        System.out.println(appointments.toArray().length);
-        for (int i = 0; i <= appointments.count(); i++) {
-            System.out.println(appointments);
-        }
-        // System.out.println(appointments.);
+    public static Patient convertToPatient(String line) {
+        String[] patientsRaw = line.split(",");
+        return new Patient(Integer.parseInt(patientsRaw[0]), patientsRaw[1], patientsRaw[2], Integer.parseInt(patientsRaw[3]));
     }
 
     public static Patient loginAsPatient() {

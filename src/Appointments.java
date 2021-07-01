@@ -1,18 +1,24 @@
-public class Appointment {
-    private int appointmentsId;
-    private int patientId;
-    private String typeOfExamination;
-    private String date;
-    private int time;
-    private int doctorId;
+public class Appointments {
+    int appointmentsId;
+    int patientId;
+    Inspection typeOfExamination;
+    String date;
+    int time;
+    int doctorId;
 
-    public Appointment(int appointmentsId, int patientId, String typeOfExamination, String date, int time, int doctorId) {
+    public Appointments(int appointmentsId, int patientId, Inspection typeOfExamination, String date, int time, int doctorId) {
         this.appointmentsId = appointmentsId;
         this.patientId = patientId;
         this.typeOfExamination = typeOfExamination;
         this.date = date;
         this.time = time;
         this.doctorId = doctorId;
+    }
+
+    public static Appointments convertToAppointments(String line) {
+        String[] appointmentsId = line.split(",");
+        return new Appointments(Integer.parseInt(appointmentsId[0]), Integer.parseInt(appointmentsId[1]), Inspection.INITIAL, appointmentsId[3], Integer.parseInt(appointmentsId[4]), Integer.parseInt(appointmentsId[5]));
+        //TODO:Fix Inspection
     }
 
     public int getAppointmentsId() {
@@ -31,11 +37,11 @@ public class Appointment {
         this.patientId = patientId;
     }
 
-    public String getTypeOfExamination() {
+    public Inspection getTypeOfExamination() {
         return typeOfExamination;
     }
 
-    public void setTypeOfExamination(String typeOfExamination) {
+    public void setTypeOfExamination(Inspection typeOfExamination) {
         this.typeOfExamination = typeOfExamination;
     }
 

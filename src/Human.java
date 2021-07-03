@@ -35,12 +35,4 @@ public abstract class Human {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
-    public void listOfPatient() {
-        List<Patient> people =
-                Arrays.asList(new Patient(1, "Maria", "Petrova", 25),
-                        new Patient(2, "Ivan", "Ivanov", 34),
-                        new Patient(3, "Konstantin", "Marinov", 18),
-                        new Patient(4, "Krasimira", "Petkova", 4));
-    }
 }

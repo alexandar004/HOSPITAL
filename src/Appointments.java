@@ -1,4 +1,4 @@
-public class Appointments {
+public class    Appointments {
     int appointmentsId;
     int patientId;
     Inspection typeOfExamination;

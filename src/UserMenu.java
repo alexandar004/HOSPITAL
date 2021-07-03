@@ -59,15 +59,14 @@ public class UserMenu {
 
     protected void patientChoice() {
         Scanner scanner = new Scanner(System.in);
-
         Patient currentLoggedInPatient = Patient.loginAsPatient();
 
-        System.out.println("1 - view all appointments, 2 - update an appointment, 3 - delete an appointment or 4 to turn Back\"");
+        System.out.println("1 - view all appointments, 2 - update an appointment, 3 - delete an appointment or 4 to turn Back");
         int input = scanner.nextInt();
 
         switch (input) {
-            case 1 -> System.out.println("Patient functional 1");
-            case 2 -> System.out.println("Patient functional 2");
+            case 1 -> Patient.viewAllAppointments() ;
+//            case 2 -> Patient.changeDateAndTime();
             case 3 -> System.out.println("Patient functional 3");
             case 4 -> mainChoice();
             default -> {

@@ -19,6 +19,7 @@ public class Patient extends Human {
         String[] patientsRaw = line.split(",");
         return new Patient(Integer.parseInt(patientsRaw[0]), patientsRaw[1], patientsRaw[2], Integer.parseInt(patientsRaw[3]));
     }
+    
 
     public static Patient loginAsPatient() {
         Scanner input = new Scanner(System.in);

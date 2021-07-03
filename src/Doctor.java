@@ -3,6 +3,7 @@ public class Doctor extends Human {
 
     public Doctor(int id, String firstName, String lastName, Speciality speciality) {
         super(id, firstName, lastName);
+        this.speciality = speciality;
     }
 
     public Doctor(int id, String firstName, String lastName) {

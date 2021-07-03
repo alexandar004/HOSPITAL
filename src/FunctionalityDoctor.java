@@ -1,7 +1,9 @@
+import java.sql.PseudoColumnUsage;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class FunctionalityDoctor {
 
@@ -18,7 +20,7 @@ public class FunctionalityDoctor {
                 isDoctorLoggedIn = true;
             }
         }
-        if(!isDoctorLoggedIn){
+        if (!isDoctorLoggedIn) {
             doctorLogIn(getLogInParameters());
         }
     }
@@ -39,20 +41,22 @@ public class FunctionalityDoctor {
 
     public void printMenu(Doctor doctor) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("1. Sort all reserved hours of a doctor by patient name.");
-        System.out.println("2. Sort all reserved hours of a doctor by appointment hour.");
-        System.out.println("3. Sort all reserved hours of a doctor patient ID.");
-        System.out.println("4. Group patients by doctor name.");
-        System.out.println("5. Group patients by speciality.");
-        System.out.println("6. Group patients by appointment date.");
+        System.out.println("1. Visual all reserved hour a current doctor");
+        System.out.println("2. Sort all reserved hours of a doctor by patient name.");
+        System.out.println("3. Sort all reserved hours of a doctor by appointment hour.");
+        System.out.println("4. Sort all reserved hours of a doctor patient ID.");
+        System.out.println("5. Group patients by doctor name.");
+        System.out.println("6. Group patients by speciality.");
+        System.out.println("7. Group patients by appointment date.");
         int menuChoice = scanner.nextInt();
         switch (menuChoice) {
             case 1 -> printCurrentDoctorAppointments(getAllAppointmentsForCurrentDoctor(doctor));
-            case 2 -> sortCurrentDoctorAppointmentsByHour(getAllAppointmentsForCurrentDoctor(doctor));
-            case 3 -> sortCurrentDoctorAppointmentsByPatientId(getAllAppointmentsForCurrentDoctor(doctor));
-            case 4 -> groupPatientsByDoctorName();
-            case 5 -> groupPatientsBySpeciality();
-            case 6 -> groupPatientsByAppointmentDate();
+            case 2 -> sortCurrentDoctorAppointmentsByPatientName(getAllAppointmentsForCurrentDoctor(doctor));
+            case 3 -> sortCurrentDoctorAppointmentsByHour(getAllAppointmentsForCurrentDoctor(doctor));
+            case 4 -> sortCurrentDoctorAppointmentsByPatientId(getAllAppointmentsForCurrentDoctor(doctor));
+            case 5 -> groupPatientsByDoctorName();
+            case 6 -> groupPatientsBySpeciality();
+            case 7 -> groupPatientsByAppointmentDate();
             default -> printMenu(doctor);
         }
     }

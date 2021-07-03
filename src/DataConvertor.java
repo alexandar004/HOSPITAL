@@ -3,6 +3,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class DataConvertor {
+
+
     public static final String SPLIT_REGEX = ",";
 
     FileManager fileManager = new FileManager();

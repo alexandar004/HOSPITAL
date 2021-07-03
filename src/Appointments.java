@@ -21,6 +21,13 @@ public class Appointments {
         //TODO:Fix Inspection
     }
 
+    public static Inspection getEnumFromString(String name){
+    name.toUpperCase();
+        return Inspection.CONSULTATION;
+    }
+
+
+
     public int getAppointmentsId() {
         return appointmentsId;
     }

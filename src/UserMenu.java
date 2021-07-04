@@ -28,7 +28,6 @@ public class UserMenu {
             }
             case 2 -> {
                 System.out.println("You are patient");
-                //functionalityPatient.loginAsPatient();
                 patientChoice();
             }
             case 3 -> {

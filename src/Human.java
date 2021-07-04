@@ -1,6 +1,3 @@
-import java.util.Arrays;
-import java.util.List;
-
 public abstract class Human {
     private int id;
     private String firstName;
@@ -16,23 +13,12 @@ public abstract class Human {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getFirstName() {
         return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 }

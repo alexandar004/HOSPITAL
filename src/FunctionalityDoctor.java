@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FunctionalityDoctor {
-
     DataConvertor dataConvertor = new DataConvertor();
     Doctor loggedDoctor;
 
@@ -34,7 +33,6 @@ public class FunctionalityDoctor {
         String firstName = scanner.next();
         System.out.println("Last name: ");
         String lastName = scanner.next();
-
         return new Doctor(id, firstName, lastName);
     }
 
@@ -126,11 +124,10 @@ public class FunctionalityDoctor {
         return name;
     }
 
-//    public List<Appointments> sortCurrentDoctorAppointmentsByHourDescending(List<Appointments> appointments) {
+    //    public List<Appointments> sortCurrentDoctorAppointmentsByHourDescending(List<Appointments> appointments) {
 //         appointments.sort((a1,a2) -> a1.getTime() > a2.getTime());
 //         return appointments;
 //    }
-
     public List<Appointments> sortCurrentDoctorAppointmentsByHour(List<Appointments> appointments) {
         appointments.sort(Comparator.comparing(Appointments::getTime));
         return appointments;
@@ -140,7 +137,6 @@ public class FunctionalityDoctor {
         appointments.sort(Comparator.comparing(Appointments::getPatientId));
         return appointments;
     }
-
 //    private List<Patient> groupPatientsBySpeciality(List<Patient> patients) {
 //        patients.stream().collect(Collectors.groupingBy(Patient::));
 //        return Collections.emptyList();
@@ -155,4 +151,3 @@ public class FunctionalityDoctor {
 //        return Collections.emptyList();
 //    }
 }
-

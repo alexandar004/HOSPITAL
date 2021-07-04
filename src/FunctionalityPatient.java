@@ -1,4 +1,3 @@
-import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -19,16 +18,19 @@ public class FunctionalityPatient {
         switch (menuChoice) {
             case 1 -> printCurrentPatientAppointments(getAllAppointmentsForCurrentPatient(patient));
             case 2 -> chooseAppointmentToUpdate(patient);
-            case 3 -> deleteAppointment(getAllAppointmentsForCurrentPatient(patient));
+            case 3 -> WriteToAppointments.writeToAppointments(deleteAppointment());
             default -> printMenu(patient);
         }
-
     }
 
-    public void deleteAppointment(List<Appointments> allAppointmentsForCurrentPatient) {
-        System.out.println("Enter appointment id");
-//        dataConvertor.getAppointments().remove(0);
+    public List<Appointments> deleteAppointment() {
+        List<Appointments> app = dataConvertor.appointments;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter appointment id to delete");
+        int appointmentId = input.nextInt();
 
+        dataConvertor.getAppointments().remove(appointmentId - 1);
+        return app;
     }
 
     public void chooseAppointmentToUpdate(Patient patient) {
@@ -77,7 +79,7 @@ public class FunctionalityPatient {
         var patients = manager.getPatients();
         List<Patient> patientsList = new ArrayList<Patient>();
 
-        for (int i = 1; i < patients.size(); i++) {
+        for (int i = 0; i < patients.size(); i++) {
             var patientsRaw = patients.get(i).split(",");
 
             var patient = new Patient(Integer.parseInt(patientsRaw[0]), patientsRaw[1], patientsRaw[2], Integer.parseInt(patientsRaw[3]));

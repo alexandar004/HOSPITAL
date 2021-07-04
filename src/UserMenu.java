@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class UserMenu {
 
     FunctionalityDoctor functionalityDoctor = new FunctionalityDoctor();
+    FunctionalityPatient functionalityPatient = new FunctionalityPatient();
 
     public void startProgram() {
 
@@ -27,6 +28,7 @@ public class UserMenu {
             }
             case 2 -> {
                 System.out.println("You are patient");
+                //functionalityPatient.loginAsPatient();
                 patientChoice();
             }
             case 3 -> {
@@ -58,23 +60,23 @@ public class UserMenu {
     }
 
     protected void patientChoice() {
-        Scanner scanner = new Scanner(System.in);
+        //Scanner scanner = new Scanner(System.in);
         FunctionalityPatient functionalityPatient = new FunctionalityPatient();
 
-        Patient currentLoggedInPatient = Patient.loginAsPatient();
+        Patient currentLoggedInPatient = functionalityPatient.loginAsPatient();
+        functionalityPatient.printMenu(currentLoggedInPatient);
+        //System.out.println("1 - view all appointments, 2 - update an appointment, 3 - delete an appointment or 4 to turn Back");
+        //int input = scanner.nextInt();
 
-        System.out.println("1 - view all appointments, 2 - update an appointment, 3 - delete an appointment or 4 to turn Back");
-        int input = scanner.nextInt();
-
-        switch (input) {
-            case 1 -> functionalityPatient.getAllAppointmentsForCurrentPatient(currentLoggedInPatient) ;
-//            case 2 -> Patient.changeDateAndTime();
-            case 3 -> System.out.println("Patient functional 3");
-            case 4 -> mainChoice();
-            default -> {
-                System.out.println("Enter 1, 2, 3 or 4");
-                patientChoice();
-            }
-        }
+//        switch (input) {
+//            case 1 -> functionalityPatient.getAllAppointmentsForCurrentPatient(currentLoggedInPatient) ;
+//            case 2 -> functionalityPatient.updateAppointment();
+//            case 3 -> System.out.println("Patient functional 3");
+//            case 4 -> mainChoice();
+//            default -> {
+//                System.out.println("Enter 1, 2, 3 or 4");
+//                patientChoice();
+//            }
+//        }
     }
 }

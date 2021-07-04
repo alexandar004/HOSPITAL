@@ -17,16 +17,9 @@ public class    Appointments {
 
     public static Appointments convertToAppointments(String line) {
         String[] appointmentsId = line.split(",");
-        return new Appointments(Integer.parseInt(appointmentsId[0]), Integer.parseInt(appointmentsId[1]), Inspection.INITIAL, appointmentsId[3], Integer.parseInt(appointmentsId[4]), Integer.parseInt(appointmentsId[5]));
+        return new Appointments(Integer.parseInt(appointmentsId[0]), Integer.parseInt(appointmentsId[1]), EnumsConverter.enumInspectionFromString(appointmentsId[2]), appointmentsId[3], Integer.parseInt(appointmentsId[4]), Integer.parseInt(appointmentsId[5]));
         //TODO:Fix Inspection
     }
-
-    public static Inspection getEnumFromString(String name){
-    name.toUpperCase();
-        return Inspection.CONSULTATION;
-    }
-
-
 
     public int getAppointmentsId() {
         return appointmentsId;

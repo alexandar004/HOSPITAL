@@ -3,6 +3,7 @@ public class Doctor extends Human {
 
     public Doctor(int id, String firstName, String lastName, Speciality speciality) {
         super(id, firstName, lastName);
+        this.speciality = speciality;
     }
 
     public Doctor(int id, String firstName, String lastName) {
@@ -13,4 +14,5 @@ public class Doctor extends Human {
         String[] doctorRaw = line.split(",");
         return new Doctor (Integer.parseInt(doctorRaw[0]), doctorRaw[1], doctorRaw[2], Speciality.CARDIOLOGY);
     }
+
 }

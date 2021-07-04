@@ -1,3 +1,6 @@
+import Enums.Inspection;
+import utils.EnumsConverter;
+
 public class Appointments {
     int appointmentsId;
     int patientId;
@@ -18,7 +21,7 @@ public class Appointments {
     public static Appointments convertToAppointments(String line) {
         String[] appointmentsId = line.split(",");
         return new Appointments(Integer.parseInt(appointmentsId[0]), Integer.parseInt(appointmentsId[1]), EnumsConverter.enumInspectionFromString(appointmentsId[2]), appointmentsId[3], Integer.parseInt(appointmentsId[4]), Integer.parseInt(appointmentsId[5]));
-        //TODO:Fix Inspection
+        //TODO:Fix Enums.Inspection
     }
 
     public static Inspection getEnumFromString(String name) {

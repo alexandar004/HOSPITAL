@@ -1,3 +1,8 @@
+package utils;
+
+import Enums.Inspection;
+import Enums.Speciality;
+
 public class EnumsConverter {
     public static Inspection enumInspectionFromString(String text) {
         return switch (text) {

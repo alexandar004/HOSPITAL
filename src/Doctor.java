@@ -14,4 +14,5 @@ public class Doctor extends Human {
         String[] doctorRaw = line.split(",");
         return new Doctor (Integer.parseInt(doctorRaw[0]), doctorRaw[1], doctorRaw[2], Speciality.CARDIOLOGY);
     }
+
 }

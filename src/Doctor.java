@@ -1,3 +1,6 @@
+import Enums.Speciality;
+import utils.EnumsConverter;
+
 public class Doctor extends Human {
     Speciality speciality;
 

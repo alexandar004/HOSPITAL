@@ -12,6 +12,6 @@ public class Doctor extends Human {
 
     public static Doctor convertToDoctor(String line) {
         String[] doctorRaw = line.split(",");
-        return new Doctor (Integer.parseInt(doctorRaw[0]), doctorRaw[1], doctorRaw[2], Speciality.CARDIOLOGY);
+        return new Doctor (Integer.parseInt(doctorRaw[0]), doctorRaw[1], doctorRaw[2], EnumsConverter.enumSpecialityFromString(doctorRaw[3]));
     }
 }

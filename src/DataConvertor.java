@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,15 +25,7 @@ public class DataConvertor {
     }
 
     public List<Doctor> convertToDoctor(List<String> data) {
-        List<Doctor> doctor = new ArrayList<>();
-
-        for (String s : data
-        ) {
-            String[] line = s.split(SPLIT_REGEX);
-            Doctor currentDoctor = new Doctor(Integer.parseInt(line[0]), line[1], line[2], Speciality.CARDIOLOGY);
-            doctor.add(currentDoctor);
-        }
-        return doctor;
+        return data.stream().map(Doctor::convertToDoctor).collect(Collectors.toList());
     }
 
     public List<Patient> convertToPatient(List<String> data) {

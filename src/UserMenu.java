@@ -40,40 +40,9 @@ public class UserMenu {
         }
     }
 
-    public void doctorChoice() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("1 - view all appointments, 2 - update an appointment, 3 - delete an appointment or 4 to turn Back");
-        int input = scanner.nextInt();
-
-        switch (input) {
-            case 1 -> System.out.println("Doctor functional 1");
-            case 2 -> System.out.println("Doctor functional 2");
-            case 3 -> System.out.println("Doctor functional 3");
-            case 4 -> mainChoice();
-            default -> {
-                System.out.println("Enter 1, 2, 3 or 4");
-                doctorChoice();
-            }
-        }
-    }
-
     protected void patientChoice() {
-        Scanner scanner = new Scanner(System.in);
-
-        Patient currentLoggedInPatient = Patient.loginAsPatient();
-
-        System.out.println("1 - view all appointments, 2 - update an appointment, 3 - delete an appointment or 4 to turn Back\"");
-        int input = scanner.nextInt();
-
-        switch (input) {
-            case 1 -> System.out.println("Patient functional 1");
-            case 2 -> System.out.println("Patient functional 2");
-            case 3 -> System.out.println("Patient functional 3");
-            case 4 -> mainChoice();
-            default -> {
-                System.out.println("Enter 1, 2, 3 or 4");
-                patientChoice();
-            }
-        }
+        FunctionalityPatient functionalityPatient = new FunctionalityPatient();
+        Patient currentLoggedInPatient = functionalityPatient.loginAsPatient();
+        functionalityPatient.printMenu(currentLoggedInPatient);
     }
 }

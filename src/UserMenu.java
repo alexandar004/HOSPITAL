@@ -1,6 +1,9 @@
 import java.util.Scanner;
 
 public class UserMenu {
+
+    FunctionalityDoctor functionalityDoctor = new FunctionalityDoctor();
+
     public void startProgram() {
 
         System.out.println("Program is run");
@@ -19,7 +22,8 @@ public class UserMenu {
         switch (input) {
             case 1 -> {
                 System.out.println("You are doctor");
-                doctorChoice();
+                functionalityDoctor.doctorLogIn(
+                        functionalityDoctor.getLogInParameters());
             }
             case 2 -> {
                 System.out.println("You are patient");

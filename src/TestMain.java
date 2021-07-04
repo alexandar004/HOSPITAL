@@ -1,7 +1,10 @@
 public class TestMain {
     public static void main(String[] args) {
-    WriteToAppointments writeToAppointments = new WriteToAppointments();
     DataConvertor dataConvertor = new DataConvertor();
-    dataConvertor.appointments.remove(0);
+        System.out.println(dataConvertor.getAppointments().get(0).typeOfExamination);
+        System.out.println(dataConvertor.getAppointments().get(1).typeOfExamination);
+        System.out.println(dataConvertor.getAppointments().get(2).typeOfExamination);
+        System.out.println(dataConvertor.getAppointments().get(3).typeOfExamination);
+
     }
 }

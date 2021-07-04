@@ -5,7 +5,7 @@ import java.util.List;
 
 public class WriteToAppointments {
 
-    public static void writeToAppointments(List<Appointments> appointments){
+    public static void writeToAppointments(List<Appointments> appointments) {
         write(convertToString(appointments));
 
     }
@@ -15,11 +15,11 @@ public class WriteToAppointments {
         String line = null;
         for (Appointments appointment :
                 appointments) {
-            if (appointment instanceof Appointments) {
+            if (appointment != null) {
                 line = appointment.getAppointmentsId() + "," + appointment.getPatientId() + "," +
                         appointment.getTypeOfExamination() + "," + appointment.getDate() + "," + appointment.getTime() + "," + appointment.getDoctorId();
             }
-            if(line != null){
+            if (line != null) {
                 result.append("\n").append(line);
             }
         }

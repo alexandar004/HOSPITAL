@@ -21,51 +21,32 @@ public class Appointments {
         //TODO:Fix Inspection
     }
 
-    public int getAppointmentsId() {
-        return appointmentsId;
+    public static Inspection getEnumFromString(String name) {
+        name.toUpperCase();
+        return Inspection.CONSULTATION;
     }
 
-    public void setAppointmentsId(int appointmentsId) {
-        this.appointmentsId = appointmentsId;
+    public int getAppointmentsId() {
+        return appointmentsId;
     }
 
     public int getPatientId() {
         return patientId;
     }
 
-    public void setPatientId(int patientId) {
-        this.patientId = patientId;
-    }
-
     public Inspection getTypeOfExamination() {
         return typeOfExamination;
-    }
-
-    public void setTypeOfExamination(Inspection typeOfExamination) {
-        this.typeOfExamination = typeOfExamination;
     }
 
     public String getDate() {
         return date;
     }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
-
     public int getTime() {
         return time;
     }
 
-    public void setTime(int time) {
-        this.time = time;
-    }
-
     public int getDoctorId() {
         return doctorId;
-    }
-
-    public void setDoctorId(int doctorId) {
-        this.doctorId = doctorId;
     }
 }
